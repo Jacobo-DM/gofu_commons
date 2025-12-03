@@ -4,7 +4,202 @@
   <meta charset="utf-8">
   <title>Holiday Offerings – Gofu Commons</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root {
+      --bg: #050608;
+      --panel: #121318;
+      --accent: #ffd37b;
+      --accent-soft: #42321a;
+      --text: #f5f5f5;
+      --muted: #bbbbbb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1b1d24, #050608);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .shell {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-left: 0.75rem;
+    }
+
+    .nav a:hover { color: var(--accent); }
+
+    .card {
+      background: linear-gradient(145deg, #161822, #101118);
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem 1.8rem;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 211, 123, 0.12);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1.9rem;
+    }
+
+    h2 {
+      margin-top: 1.7rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      margin-top: 1.3rem;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    h4 {
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      font-size: 0.98rem;
+    }
+
+    p { margin: 0.4rem 0; }
+
+    ul {
+      padding-left: 1.25rem;
+      margin: 0.4rem 0 0.9rem;
+    }
+
+    li { margin-bottom: 0.3rem; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .quote-box {
+      background: var(--accent-soft);
+      padding: 0.9rem 1rem;
+      margin: 1.1rem 0 1.3rem;
+      border-left: 4px solid var(--accent);
+      font-style: italic;
+      border-radius: 12px;
+    }
+
+    /* Festive enhancements */
+
+    .holiday-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05rem;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .holiday-title::after {
+      content: "✦ ✦ ✦";
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    .festive-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .divider {
+      border: none;
+      height: 1px;
+      margin: 2.5rem auto;
+      width: 60%;
+      background: repeating-linear-gradient(
+        to right,
+        transparent 0,
+        transparent 6px,
+        var(--muted) 6px,
+        var(--muted) 12px
+      );
+      opacity: 0.3;
+    }
+
+    .recipe-card {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 1.6rem 1.7rem;
+      border-radius: 0.9rem;
+      margin: 1.5rem auto;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .recipe-card h2 {
+      margin-top: 0.3rem;
+      margin-bottom: 0.2rem;
+      font-size: 1.45rem;
+    }
+
+    .recipe-card .subtitle {
+      margin-top: 0;
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-bottom: 0.9rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.3rem 0 1rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 211, 123, 0.55);
+      color: var(--accent);
+    }
+
+  </style>
 </head>
 
 <body>
@@ -17,109 +212,4 @@
       <a href="recipes.html">Recipes</a>
       <a href="holiday.html">Holiday Offerings</a>
       <a href="why-gofu.html">Why Gofu?</a>
-      <a href="declaration.html">Declaration</a>
-    </nav>
-  </header>
-
-  <main class="card">
-
-    <h1>Holiday Offerings</h1>
-    <p class="muted">
-      Shared breads and sweets for any tradition, rooted in memory, craft, and sustainable nourishment.
-      These recipes are invitations, not requirements: adapt them to your land, your people, your rituals.
-    </p>
-
-    <h2>Pan Dulce de la Olla</h2>
-    <p>
-      A simple, fragrant sweet bread made with piloncillo syrup, warm spices, and the option of Gofu or
-      other bean-based milks. It honors pan dulce traditions while affirming the need for affordable,
-      nourishing celebration in a time of rising costs and hunger.
-    </p>
-
-    <h3>Ingredients</h3>
-
-    <h4>For the syrup (la olla)</h4>
-    <ul>
-      <li>1 cone <strong>piloncillo</strong> (or ¾ cup brown sugar + 1 tbsp molasses)</li>
-      <li>1½ cups <strong>water</strong></li>
-      <li>1–2 <strong>cinnamon sticks</strong></li>
-      <li>2–3 <strong>cloves</strong></li>
-      <li>Small piece <strong>orange peel</strong> (optional)</li>
-      <li>1 tsp <strong>anise seeds</strong> or ½ tsp ground anise (optional)</li>
-    </ul>
-
-    <h4>For the dough</h4>
-    <ul>
-      <li>3 to 3½ cups <strong>flour</strong> (all-purpose or bread)</li>
-      <li>2¼ tsp <strong>active dry yeast</strong> (1 packet)</li>
-      <li>½ cup <strong>Gofu milk</strong>, other bean milk, or cow’s milk (lukewarm)</li>
-      <li>2 <strong>eggs</strong> (or 1 egg + 1 tbsp oil)</li>
-      <li>¼ cup <strong>neutral oil</strong> or softened butter</li>
-      <li>½ tsp <strong>salt</strong></li>
-    </ul>
-
-    <h4>Optional add-ins</h4>
-    <p class="note">
-      Raisins, chocolate, toasted pumpkin seeds, citrus zest, dates, nuts, sesame seeds…
-      let your own tradition finish the story.
-    </p>
-
-    <h3>Make the Syrup</h3>
-    <ol>
-      <li>In a pot, combine piloncillo, water, cinnamon, cloves, and orange peel.</li>
-      <li>Simmer until the piloncillo dissolves into a dark, fragrant syrup.</li>
-      <li>Remove from heat and let cool until warm. Strain out the spices.</li>
-    </ol>
-
-    <h3>Activate the Yeast</h3>
-    <ol>
-      <li>Warm the Gofu/bean milk to body temperature.</li>
-      <li>Stir in the yeast and let sit 8–10 minutes, until foamy.</li>
-    </ol>
-
-    <h3>Make the Dough</h3>
-    <ol>
-      <li>In a large bowl, mix 1 cup warm syrup, the yeast mixture, eggs (or egg + oil), and salt.</li>
-      <li>Add flour a cup at a time until a soft dough forms.</li>
-      <li>Knead 8–10 minutes (or 4 minutes, rest 5, then 2 more) until smooth and elastic.</li>
-    </ol>
-
-    <h3>First Rise</h3>
-    <ol>
-      <li>Place the dough in a lightly oiled bowl, cover, and let rise 1–2 hours, until doubled.</li>
-    </ol>
-
-    <h3>Shape</h3>
-    <ol>
-      <li>Shape into 1 large round, 2 smaller loaves, buns, braids, or festive shapes.</li>
-      <li>Tuck in any add-ins (raisins, nuts, chocolate) as you shape.</li>
-      <li>Brush lightly with syrup or milk and sprinkle sesame seeds if you like.</li>
-    </ol>
-
-    <h3>Second Rise & Bake</h3>
-    <ol>
-      <li>Let rise again 30–45 minutes.</li>
-      <li>Bake at <strong>350°F / 175°C</strong>:
-        <ul>
-          <li>25–30 minutes for buns</li>
-          <li>35–45 minutes for loaves</li>
-        </ul>
-      </li>
-      <li>Bread is ready when golden and hollow-sounding when tapped. Brush with a little syrup for shine.</li>
-    </ol>
-
-    <div class="quote-box">
-      Pan Dulce de la Olla is a holiday bread for anyone who needs sweetness without shame.<br>
-      It remembers the olla, honors the craft of baking, and welcomes every table that chooses to share it.
-    </div>
-
-    <p class="muted">
-      This is the first of many Holiday Offerings. Communities are invited to adapt, translate, and add
-      their own breads, cakes, and sweets that carry the same spirit: joyful, affordable, and kind to the earth.
-    </p>
-
-  </main>
-
-</div>
-</body>
-</html>
+      <a
