@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gofu Commons – Recipes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --bg: #050608;
+      --panel: #121318;
+      --accent: #ffd37b;
+      --accent-soft: #42321a;
+      --text: #f5f5f5;
+      --muted: #bbbbbb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1b1d24, #050608);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .shell {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-left: 0.75rem;
+    }
+    .nav a:hover { color: var(--accent); }
+
+    h1 { margin-top: 0; margin-bottom: 0.4rem; }
+    h2 { margin-top: 1.7rem; margin-bottom: 0.4rem; font-size: 1.15rem; }
+    h3 { margin-top: 1.2rem; margin-bottom: 0.3rem; font-size: 1rem; }
+    p { margin: 0.4rem 0; }
+
+    .card {
+      background: linear-gradient(145deg, #161822, #101118);
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem 1.8rem;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+      border: 1px solid rgba(255, 211, 123, 0.12);
+    }
+    ul { padding-left: 1.25rem; margin: 0.3rem 0 0.8rem; }
+    li { margin-bottom: 0.25rem; }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <header class="nav">
+      <div class="logo">GOFU COMMONS</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="declaration.html">Declaration</a>
+        <a href="recipes.html">Recipes</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h1>Gofu Recipes</h1>
+      <p class="muted">
+        These are starting points. Adjust freely for your beans, your water, your people.
+      </p>
+
+      <h2>1. Base Gofu</h2>
+      <p><strong>Ingredients (example batch)</strong></p>
+      <ul>
+        <li>1 kg dried beans (any kind you trust and love)</li>
+        <li>Water for soaking + cooking</li>
+        <li>Salt to taste</li>
+        <li>Optional: garlic, onion, herbs, spices, oil or fat available</li>
+      </ul>
+
+      <p><strong>Method (simple version)</strong></p>
+      <ul>
+        <li>Rinse the beans. Soak in plenty of water until they swell and soften
+            (overnight is ideal; shorter soaks work with hot water).</li>
+        <li>Drain, rinse, and cook the beans in fresh water until completely soft.</li>
+        <li>
+          Blend, mash, or paddle the cooked beans with enough cooking liquid to make
+          a smooth, thick, pourable base — like a cross between batter and porridge.
+        </li>
+        <li>
+          Season with salt and any aromatics you like. This is base Gofu: it can be
+          ladled into bowls, poured into pans, or cooled and sliced.
+        </li>
+      </ul>
+
+      <p class="note">
+        From here, you can fry it, bake it, thin it into soup, or chill it to slice.
+      </p>
+
+      <h2>2. Family Gofu</h2>
+      <p>
+        Once the base is made, every household can adjust it to taste and budget.
+        A few examples:
+      </p>
+      <ul>
+        <li>Add sautéed onions, garlic, and spices for a richer flavor.</li>
+        <li>Stir in leftover rice or grains to stretch the batch.</li>
+        <li>Fold in chopped greens at the end of cooking.</li>
+        <li>Top with anything: chili oil, herbs, grated vegetables, pickles.</li>
+      </ul>
+
+      <h2>3. Kudzu Gofu (or Thickening Root Version)</h2>
+      <p>
+        In regions where kudzu or similar starches are available, a small amount
+        can be used to give Gofu extra body and bounce.
+      </p>
+      <ul>
+        <li>Prepare base Gofu.</li>
+        <li>In a bowl, dissolve 1–2 tablespoons of kudzu (or other starch)
+            in cold water until smooth.</li>
+        <li>Stir this slurry into hot Gofu while mixing constantly.</li>
+        <li>Simmer gently for a few minutes until thicker and glossy.</li>
+      </ul>
+
+      <p class="note">
+        This version can set more firmly when cooled, useful for slicing and frying.
+      </p>
+
+      <h2>4. School & Large-Kitchen Gofu</h2>
+      <p>
+        For cafeterias, shelters, and community kitchens serving many people,
+        the same pattern scales up:
+      </p>
+      <ul>
+        <li>Soak beans in large tubs or cambros; cook in steam kettles or large pots.</li>
+        <li>Use immersion blenders or paddles to transform cooked beans to Gofu.</li>
+        <li>Season simply so students and guests can add toppings as they wish.</li>
+        <li>Serve with bread, rice, tortillas, or vegetables — whatever is local and loved.</li>
+      </ul>
+
+      <p class="note">
+        Staff and students can co-design toppings and side dishes; Gofu becomes a base
+        for creativity, not a fixed product.
+      </p>
+
+      <p class="muted" style="margin-top:1.3rem;">
+        These recipes are starting points. Please adapt them to your land, your budget,
+        and your people — and share back what you discover.
+      </p>
+    </main>
+  </div>
+</body>
+</html>
