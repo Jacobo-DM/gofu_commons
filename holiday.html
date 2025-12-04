@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Holiday Offerings · Gofu Commons</title>
+  <title>Holiday Offerings | Gofu Commons</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Holiday offerings from the Gofu Commons: nourishing, affordable recipes that honor tradition and the spirit of the season.">
   <style>
     :root {
-      --bg: #f7f5f0;
-      --card-bg: #ffffff;
-      --text: #222222;
-      --muted: #555555;
-      --border: #dddddd;
-      --accent: #444444;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-serif: "Georgia", "Times New Roman", serif;
+      --bg: #0b1014;
+      --bg-soft: #161b22;
+      --accent: #f4c06b;
+      --accent-soft: #fbe4b6;
+      --text: #f5f5f5;
+      --muted: #c0c7d1;
+      --border-soft: #2b3240;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.5);
+      --radius-lg: 18px;
     }
 
     * {
@@ -24,353 +24,478 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: var(--font-main);
-      background: radial-gradient(circle at top, #fdfcf8 0, var(--bg) 65%);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #202939 0, var(--bg) 46%, #05070b 100%);
       color: var(--text);
       line-height: 1.6;
     }
 
-    .page {
-      max-width: 760px;
+    .container {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 24px 16px 40px;
+      padding: 1.5rem 1.25rem 3rem;
     }
 
     header {
-      text-align: center;
-      margin-bottom: 2rem;
+      padding: 1.75rem 1.5rem 1.25rem;
+      margin-bottom: 1.5rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(244, 192, 107, 0.1), rgba(19, 27, 40, 0.98));
+      border: 1px solid rgba(244, 192, 107, 0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
     }
 
-    .seasonal-banner {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.85);
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--accent);
+    header::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      opacity: 0.12;
+      background:
+        radial-gradient(circle at 0% 0%, #f4c06b 0, transparent 50%),
+        radial-gradient(circle at 100% 0%, #f5f0e6 0, transparent 52%);
+      pointer-events: none;
     }
 
-    .seasonal-banner span {
-      display: inline-block;
-      margin: 0 0.35rem;
+    header-inner {
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid rgba(244, 192, 107, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 20%, #fdf5e3 0, #f4c06b 26%, #5b3517 80%);
+      box-shadow: 0 0 0 3px rgba(11, 16, 20, 0.75);
+      font-size: 1.4rem;
+    }
+
+    .logo-circle span {
+      display: block;
+      transform: translateY(1px);
     }
 
     h1 {
-      font-family: var(--font-serif);
-      font-size: 2.15rem;
-      margin: 1.25rem 0 0.25rem;
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+      margin: 0;
+      letter-spacing: 0.03em;
     }
 
     .subtitle {
-      font-size: 0.98rem;
+      margin-top: 0.35rem;
       color: var(--muted);
-      max-width: 36rem;
-      margin: 0.25rem auto 0;
-    }
-
-    .intro-card {
-      background: var(--card-bg);
-      border-radius: 18px;
-      padding: 1.25rem 1.4rem;
-      margin-top: 1.5rem;
-      border: 1px solid rgba(0,0,0,0.035);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.04);
       font-size: 0.98rem;
+      max-width: 40rem;
     }
 
-    .intro-card p {
-      margin: 0.35rem 0;
+    .nav-links {
+      margin-top: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      font-size: 0.9rem;
     }
 
-    .intro-card p:first-child {
-      margin-top: 0;
+    .nav-links a {
+      text-decoration: none;
+      color: var(--accent-soft);
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 192, 107, 0.45);
+      background: rgba(11, 16, 20, 0.65);
+      backdrop-filter: blur(6px);
+      transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
 
-    .intro-card p:last-child {
-      margin-bottom: 0;
-    }
-
-    .accent-line {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.5rem;
-    }
-
-    .accent-line span {
-      display: inline-block;
-      margin: 0 0.3rem;
+    .nav-links a:hover {
+      background: rgba(244, 192, 107, 0.08);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
     }
 
     main {
-      margin-top: 2.25rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+      gap: 1.5rem;
     }
 
-    .divider {
-      border: 0;
-      border-top: 1px solid var(--border);
-      margin: 2.25rem 0 1.75rem;
+    @media (max-width: 840px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
-    .recipe {
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 1.6rem 1.6rem 1.9rem;
-      border: 1px solid rgba(0,0,0,0.04);
-      box-shadow: 0 14px 35px rgba(0,0,0,0.04);
+    .card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 1.3rem 1.2rem 1.4rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .recipe-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 0.5rem 0.75rem;
-      margin-bottom: 0.75rem;
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
     }
 
-    .recipe-title {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      margin: 0;
-    }
-
-    .recipe-tagline {
+    .tagline {
       font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .recipe-meta {
-      font-size: 0.86rem;
       color: var(--muted);
       margin-bottom: 0.9rem;
     }
 
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 1.4rem;
-      margin-bottom: 0.4rem;
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid rgba(244, 192, 107, 0.55);
+      color: var(--accent-soft);
+      background: rgba(244, 192, 107, 0.08);
     }
 
-    h3 {
-      font-size: 1.02rem;
-      margin-top: 1.15rem;
-      margin-bottom: 0.35rem;
+    .pill span {
+      font-size: 0.9rem;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin: 0.6rem 0 0.3rem;
+    }
+
+    p {
+      margin-top: 0.3rem;
+      margin-bottom: 0.7rem;
+      font-size: 0.97rem;
     }
 
     ul, ol {
-      padding-left: 1.1rem;
-      margin-top: 0.35rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      font-size: 0.95rem;
     }
 
-    li {
-      margin: 0.15rem 0;
+    li + li {
+      margin-top: 0.15rem;
     }
 
     .note {
+      border-left: 3px solid rgba(244, 192, 107, 0.75);
+      padding-left: 0.7rem;
+      margin: 0.7rem 0;
       font-size: 0.9rem;
       color: var(--muted);
-      border-left: 3px solid var(--border);
-      padding-left: 0.75rem;
-      margin-top: 0.75rem;
     }
 
-    .footnote {
-      font-size: 0.85rem;
+    .soft-divider {
+      margin: 0.9rem 0 0.6rem;
+      border: 0;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sidebar-highlight {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0 0, rgba(244, 192, 107, 0.14) 0, transparent 52%),
+        radial-gradient(circle at 100% 100%, rgba(116, 134, 176, 0.16) 0, transparent 56%);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .sidebar-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .badge {
+      border-radius: 999px;
+      border: 1px solid rgba(244, 192, 107, 0.5);
+      padding: 0.15rem 0.55rem;
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+      background: rgba(11, 16, 20, 0.75);
+    }
+
+    .disclaimer {
+      font-size: 0.8rem;
       color: var(--muted);
-      margin-top: 1.25rem;
+      margin-top: 0.8rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
     }
 
-    .footnote strong {
-      font-weight: 600;
-    }
-
-    .coming-soon {
-      font-size: 0.9rem;
+    footer {
+      margin-top: 2.3rem;
+      font-size: 0.82rem;
+      color: var(--muted);
       text-align: center;
-      color: var(--muted);
-      margin-top: 1.5rem;
     }
 
-    @media (max-width: 600px) {
-      .page {
-        padding: 18px 14px 30px;
-      }
-      .recipe {
-        padding: 1.25rem 1.2rem 1.6rem;
-      }
+    footer span {
+      opacity: 0.85;
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="container">
     <header>
-      <div class="seasonal-banner" aria-label="Holiday offerings banner">
-        <span>❄️</span>
-        <span>Holiday Offerings from the Gofu Commons</span>
-        <span>✨</span>
-      </div>
+      <header-inner>
+        <div class="title-row">
+          <!-- Placeholder logo: clay pot + beans (text-based for now) -->
+          <div class="logo-circle" aria-hidden="true">
+            <span>🍲</span>
+          </div>
+          <div>
+            <h1>Holiday Offerings</h1>
+            <p class="subtitle">
+              Simple, sustaining recipes and quiet medicines that honor craft,
+              inter-being, and the realities of everyday hunger — of body, heart, and spirit.
+            </p>
+          </div>
+        </div>
 
-      <h1>Pan Dulce de la Olla</h1>
-      <p class="subtitle">
-        A holiday bread inspired by the warmth of café de olla — honoring tradition,
-        centering nourishment, and welcoming any table, in any culture.
-      </p>
-
-      <div class="intro-card">
-        <p>
-          This pan dulce starts with the spirit of a clay pot simmering on the stove:
-          whole spices, unrefined sugar, and the slow magic of aroma filling a home.
-          From there, we lean gently toward the Commons — adjusting for affordability,
-          whole grains, and ingredients that can be found (or shared) almost anywhere.
-        </p>
-        <p>
-          Use this recipe as a base and adapt as needed: plant milks, local flours,
-          seasonal fruit, and whatever stories your own kitchen carries. The goal
-          is simple: a loaf or set of rolls you can offer to others without apology
-          — tender, fragrant, and kind to both body and budget.
-        </p>
-      </div>
-
-      <p class="accent-line">
-        <span>🫙</span>
-        <span>Clay pot. Warm spices. Shared table.</span>
-        <span>🫘</span>
-      </p>
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="index.html">← Back to Gofu Commons</a>
+          <a href="#pan-dulce">Pan Dulce de la Olla</a>
+          <a href="#kudzu-notes">Kudzu &amp; Quiet Medicine</a>
+        </nav>
+      </header-inner>
     </header>
 
     <main>
-      <section class="recipe" aria-labelledby="pan-dulce-heading">
-        <div class="recipe-header">
-          <h2 id="pan-dulce-heading" class="recipe-title">Pan Dulce de la Olla</h2>
-          <span class="recipe-tagline">Holiday bread with café de olla soul</span>
-        </div>
-
-        <p class="recipe-meta">
-          Makes 1 medium loaf or 10–12 small rolls · Time: about 2½ hours (including rising)
+      <!-- MAIN COLUMN: PAN DULCE DE LA OLLA -->
+      <section id="pan-dulce" class="card">
+        <span class="pill">
+          <span class="pill-dot"></span>
+          <span>Holiday Bread • Shared Table</span>
+        </span>
+        <h2>Pan Dulce de la Olla</h2>
+        <p class="tagline">
+          A holiday bread that carries the warmth of <em>piloncillo</em> or raw sugar,
+          cinnamon, and citrus — gentle enough to live in any tradition.
         </p>
 
-        <h3>De la Olla Syrup (the heart)</h3>
         <p>
-          This is where the flavor lives. Traditionally, café de olla uses piloncillo
-          (unrefined cane sugar) with cinnamon and orange peel. Use what you have, and
-          choose the most whole, least processed sweetener available to you.
+          This offering grew from the desire to honor the spirit of
+          <strong>pan dulce</strong> and <strong>café de olla</strong> while
+          also speaking to the realities of this moment: the need for
+          food that is <strong>affordable, sustaining, and kind to the body</strong>,
+          without sacrificing joy or craft.
         </p>
 
+        <hr class="soft-divider">
+
+        <p class="section-label">Core idea</p>
+        <p>
+          Think of this as a simple, enriched bread dough that
+          is bathed in a light <strong>clay-pot syrup</strong> scented with
+          cinnamon, orange peel, and piloncillo (or other unrefined sugar).
+          The result is a loaf — or small buns — that are
+          moist, lightly sweet, and deeply fragrant rather than sugary or heavy.
+        </p>
+
+        <p class="section-label">Base dough (one medium loaf or 8–10 rolls)</p>
         <ul>
-          <li>2 cups water</li>
-          <li>90–120 g (about ½–⅔ cup, packed) piloncillo, panela, jaggery, or dark brown sugar</li>
-          <li>1–2 sticks cinnamon (canela if available)</li>
-          <li>2–3 strips orange peel (optional but wonderful)</li>
-          <li>1–2 whole cloves or a small pinch ground cloves (optional)</li>
-          <li>1 tsp vanilla extract or a small piece of vanilla bean (optional)</li>
+          <li>3 cups (about 390 g) flour — a mix of whole wheat and white works well</li>
+          <li>2¼ tsp (1 packet) yeast</li>
+          <li>¾ cup warm water or oat milk</li>
+          <li>3–4 tbsp neutral oil or softened butter</li>
+          <li>2–3 tbsp unrefined sugar or honey</li>
+          <li>½ tsp salt</li>
+          <li>Optional: 1 egg for a richer dough (or extra oil for a vegan version)</li>
         </ul>
 
+        <p class="section-label">Olla syrup (for soaking / brushing)</p>
+        <ul>
+          <li>1 small cone piloncillo (or ½ cup packed dark panela / muscovado)</li>
+          <li>1½ cups water</li>
+          <li>1–2 cinnamon sticks</li>
+          <li>Strips of orange peel (pith trimmed if possible)</li>
+          <li>Optional: star anise, clove, or a slice of fresh ginger</li>
+        </ul>
+
+        <p class="section-label">Basic path</p>
         <ol>
-          <li>Add water, sweetener, cinnamon, and orange peel to a small pot (clay if you have it, any pot if you don’t).</li>
-          <li>Bring to a gentle simmer and cook for 8–10 minutes, stirring until the sugar is fully dissolved.</li>
-          <li>Turn off the heat, add cloves and vanilla if using, and let steep for another 5–10 minutes.</li>
-          <li>Strain and let the syrup cool until just warm to the touch. You’ll use part of this for the dough and can save the rest to brush on top or serve as a drizzle.</li>
+          <li>Mix the dough ingredients and knead until smooth and elastic. Let rise until doubled.</li>
+          <li>Shape as a loaf or small rolls. Let rise again in a greased pan.</li>
+          <li>Bake at 180–190°C (350–375°F) until golden and cooked through.</li>
+          <li>While the bread bakes, simmer the <strong>olla syrup</strong> until slightly thickened.</li>
+          <li>Brush the hot bread generously with syrup, or briefly dip rolls into the warm syrup.</li>
+          <li>Let the bread rest so the flavors can settle and the crumb can drink in the syrup.</li>
         </ol>
 
         <div class="note">
-          <strong>Commons note:</strong> If whole spices are hard to access, use what you have:
-          ground cinnamon, citrus zest, a splash of coffee or tea. The intention matters
-          as much as the exact spice list.
+          This bread is meant to be forgiving: whole grains, alternative fats, and
+          modest sweetness still create a holiday gift that <strong>feels abundant</strong>.
+          The point is not perfection, but presence.
         </div>
 
-        <h3>Dough Ingredients</h3>
+        <p class="section-label">Serving / adaptation ideas</p>
         <ul>
-          <li>250 g (about 2 cups) flour — ideally half bread or all-purpose flour, half whole wheat</li>
-          <li>1 tsp instant yeast (or 1¼ tsp active dry yeast)</li>
-          <li>½ tsp fine salt</li>
-          <li>1 whole egg <em>or</em> 3 Tbsp plant milk + 1 Tbsp oil (for a vegan version)</li>
-          <li>45 g (about 3 Tbsp) neutral oil, melted butter, or soft coconut oil</li>
-          <li>120 ml (½ cup) warm de la olla syrup (from above) — not hot</li>
-          <li>30–60 ml (2–4 Tbsp) warm water or plant milk, as needed for a soft dough</li>
+          <li>Slice and toast lightly the next day; serve with fruit, tea, or simple beans.</li>
+          <li>Shape the dough into small knots or spirals so that everyone can break off a piece.</li>
+          <li>Use leftover syrup to sweeten oatmeal, coffee, or roasted yams.</li>
+          <li>Offer a “pay it forward” loaf: one for your table, one for a neighbor or community fridge.</li>
         </ul>
 
-        <h3>Making the Dough</h3>
-        <ol>
-          <li>
-            In a large bowl, mix flour, yeast, and salt.
-          </li>
-          <li>
-            In a separate bowl, whisk together the warm de la olla syrup, egg (or plant milk + oil),
-            and your chosen fat (oil, butter, or coconut oil).
-          </li>
-          <li>
-            Pour the wet ingredients into the dry and mix with a spoon or your hand until a shaggy dough forms.
-            Add extra warm water or plant milk a tablespoon at a time if it feels dry.
-          </li>
-          <li>
-            Knead gently on a lightly floured surface for about 6–8 minutes, until the dough is smooth
-            and just a little tacky but not sticky. This is a soft, enriched dough; keep it kind.
-          </li>
-          <li>
-            Place in a lightly oiled bowl, cover, and let rise in a warm spot until doubled
-            (about 60–90 minutes, depending on your kitchen).
-          </li>
-        </ol>
+        <hr class="soft-divider">
 
-        <h3>Shaping & Baking</h3>
-        <ol>
-          <li>Lightly grease a small loaf pan or line a baking tray for rolls.</li>
-          <li>
-            For a loaf: gently press the dough into a rectangle, roll it up, and place seam-side down in the pan.  
-            For rolls: divide into 10–12 pieces, shape into small balls, and arrange with a little space between them.
-          </li>
-          <li>
-            Cover and let rise again until puffy (30–40 minutes). Near the end of the rise, preheat the oven to 350°F / 175°C.
-          </li>
-          <li>
-            Optional: brush the top lightly with a bit of de la olla syrup mixed with a spoonful of oil or plant milk.
-          </li>
-          <li>
-            Bake for about 22–28 minutes for rolls or 28–35 minutes for a loaf, until the tops are golden
-            and the bottom sounds hollow when tapped.
-          </li>
-          <li>
-            While still warm, you can brush once more with syrup for a gentle sheen and extra flavor.
-          </li>
-        </ol>
-
-        <h3>Variations for Different Tables</h3>
-        <ul>
-          <li>
-            <strong>Bean & Seed Boost:</strong> Add 2–3 Tbsp very soft, mashed beans (like cooked white beans or pintos)
-            and a spoonful of toasted seeds (sesame, sunflower, pumpkin). Quiet protein, no fuss.
-          </li>
-          <li>
-            <strong>Fruit & Nut:</strong> Fold in a handful of chopped dried fruit (raisins, dates, apricots)
-            and/or nuts for a more dessert-like pan.
-          </li>
-          <li>
-            <strong>Fully Plant-Based:</strong> Use plant milk, oil, and skip the egg. The syrup and gentle fat still give a tender crumb.
-          </li>
-          <li>
-            <strong>Less Sweet Everyday Loaf:</strong> Use the smaller amount of sweetener in the syrup,
-            don’t glaze the top, and slice for breakfast with a smear of beans, nut butter, or fruit.
-          </li>
-        </ul>
-
-        <p class="footnote">
-          <strong>Holiday note:</strong> This bread is meant to be shared. Wrap a few rolls in cloth or paper,
-          tuck in a handwritten note, and send them across a hallway, a courtyard, or a classroom.
-          Pan Dulce de la Olla belongs wherever there is a pot, a bit of flour, and the wish to nourish.
+        <p class="section-label">For future you</p>
+        <p>
+          Below is a safe place to paste or refine the <strong>original Pan Dulce de la Olla recipe</strong>
+          we developed earlier, so we don’t lose your exact language, proportions, and story.
         </p>
+        <!--
+          ⇩⇩⇩  PASTE YOUR ORIGINAL PAN DULCE DE LA OLLA TEXT HERE  ⇩⇩⇩
+
+          You can keep your narrative, variations, and detailed steps exactly as written before.
+          Everything above this comment is just scaffolding; feel free to adjust.
+        -->
       </section>
 
-      <hr class="divider" aria-hidden="true">
+      <!-- SIDEBAR: KUDZU & QUIET MEDICINE -->
+      <aside class="sidebar">
+        <section id="kudzu-notes" class="card" aria-labelledby="kudzu-heading">
+          <div class="sidebar-highlight"></div>
+          <div class="sidebar-inner">
+            <h3 id="kudzu-heading">Kudzu &amp; the Quiet Edge of Craving</h3>
+            <p class="tagline">
+              Not a miracle, not a cure — just a plant that, for some people,
+              seems to soften the sharp edges of “one more.”
+            </p>
 
-      <p class="coming-soon">
-        More holiday offerings from the Gofu Commons will gather here over time —  
-        simple, adaptable recipes that travel easily between cultures and kitchens.
-      </p>
+            <div class="badge-row">
+              <span class="badge">Kudzu Root • <em>Pueraria lobata</em></span>
+              <span class="badge">Evidence-informed</span>
+              <span class="badge">Addiction-aware</span>
+            </div>
+
+            <p>
+              In East Asian herbal practice, <strong>kudzu root</strong> has long been used
+              for digestion, circulation, and gently cooling the body. More recently, researchers
+              have explored another thread in its story: kudzu’s relationship to
+              <strong>alcohol use and cravings</strong>.
+            </p>
+
+            <p>
+              Several small, peer-reviewed trials with heavy drinkers suggest that standardized
+              kudzu extracts rich in isoflavones (especially <strong>puerarin</strong>) can
+              <strong>reduce how quickly and how much people drink</strong>, without acting as a sedative
+              or creating a “punishing” reaction to alcohol. The pattern that appears is quieter:
+              more time between sips, smaller amounts, and sometimes an easier shift away from
+              “just one more.” :contentReference[oaicite:0]{index=0}
+            </p>
+
+            <p>
+              This is important: kudzu is <strong>not</strong> a stand-alone treatment for addiction,
+              and it is not a substitute for community, therapy, or medical care. But for some people,
+              it may help create a <strong>small pocket of space</strong> inside the urge —
+              enough to pause, breathe, and remember the self that wants to heal.
+            </p>
+
+            <div class="note">
+              One way to honor kudzu in a holiday setting is through
+              <strong>non-alcoholic rituals</strong> — a warm citrus–kudzu tea,
+              a simple evening drink that marks “I’m done for today” without inviting relapse.
+              The plant becomes part of the <em>conversation</em>, not the hero.
+            </div>
+
+            <p class="section-label">Respecting the plant and the person</p>
+            <ul>
+              <li>If you are taking medications or have medical conditions, talk with a clinician before using herbal extracts.</li>
+              <li>Standardized extracts used in research are not the same as every product sold online.</li>
+              <li>For anyone in recovery, <strong>support and safety</strong> come first; herbs are companions, not saviors.</li>
+            </ul>
+
+            <p class="disclaimer">
+              This section is for <strong>education and reflection</strong>, not medical advice.
+              If you or someone you love is wrestling with alcohol or other substances, please seek
+              support from a qualified professional or trusted community.
+            </p>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="sidebar-inner">
+            <h3>Three Braids</h3>
+            <p class="tagline">
+              How this page quietly ties into the wider work.
+            </p>
+            <ul>
+              <li><strong>Gofu / Food Commons</strong> – holiday offerings that are nourishing, modest, and shareable.</li>
+              <li><strong>DiscoveryMode</strong> – a living example of how we talk about the gut–brain path without hype.</li>
+              <li><strong>Flower Road / RageDance</strong> – another way to meet craving: through movement, breath, and pulse, not shame.</li>
+            </ul>
+            <p>
+              The hope is simple: that every recipe and quiet medicine on this page might make it
+              a little easier for someone to stay present — with themselves, with others, and with the world.
+            </p>
+          </div>
+        </section>
+      </aside>
     </main>
+
+    <footer>
+      <span>Gofu Commons • Holiday Offerings • A small table set for many traditions.</span>
+    </footer>
   </div>
 </body>
 </html>
