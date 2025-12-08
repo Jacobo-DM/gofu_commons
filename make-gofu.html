@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Make Gofu | Gofu Commons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-alt: #111111;
+      --text: #f5f5f5;
+      --muted: #c0c0c0;
+      --accent: #ffffff;
+      --accent-soft: #dddddd;
+      --accent-border: #333333;
+      --max-width: 800px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom, #000000, #050505);
+      border-bottom: 1px solid var(--accent-border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: var(--accent-soft);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      padding-bottom: 0.1rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a.active {
+      border-bottom-color: var(--accent-soft);
+    }
+
+    /* Page layout */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem 1rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 1.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      font-size: 0.96rem;
+    }
+
+    ul, ol {
+      margin: 0.5rem 0 1rem 1.3rem;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .section-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--accent-border);
+      border-radius: 0.75rem;
+      padding: 1.1rem 1rem;
+      margin-top: 0.8rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 1.2rem;
+      border-top: 1px solid var(--accent-border);
+      padding-top: 0.75rem;
+    }
+
+    .inline-label {
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-top: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top navigation -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Gofu Commons</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="why-gofu.html">Why Gofu?</a>
+        <a href="make-gofu.html" class="active">Make Gofu</a>
+        <a href="license.html">License</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page content -->
+  <main>
+    <h1>Make Gofu</h1>
+    <p class="subtitle">
+      A simple, adaptable bean-based method. Start small. Adjust as you go.
+    </p>
+
+    <section>
+      <h2>Before you begin</h2>
+      <div class="section-card">
+        <p>
+          Gofu is a <strong>prototype food</strong>: a living recipe meant to be adapted.
+          The steps below offer one way to turn dry beans + water into a tofu-like base.
+          Different beans will behave differently, and that’s part of the design.
+        </p>
+        <p>
+          Start with <strong>small batches</strong>. Take notes. Share what you learn.
+        </p>
+
+        <p class="note">
+          Always follow basic food safety: clean hands and tools, fresh water,
+          proper soaking/cooking of beans, and sensible storage (refrigerate and
+          use within a few days).
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Base method (v1)</h2>
+      <p>
+        This is a simple starting point. Adjust ratios and timing based on your beans,
+        your stove, and your taste.
+      </p>
+
+      <h3>Ingredients (small batch)</h3>
+      <ul>
+        <li><span class="inline-label">Dry beans:</span> about 1 cup (e.g. white beans, chickpeas, or another mild bean)</li>
+        <li><span class="inline-label">Water:</span> enough to soak + later blend (see below)</li>
+        <li><span class="inline-label">Salt:</span> a pinch or two</li>
+        <li>
+          <span class="inline-label">Coagulant / setting helper (optional, experimental):</span>
+          a splash of acid (lemon juice or vinegar) or a small amount of salt-only brine
+        </li>
+      </ul>
+
+      <h3>Equipment</h3>
+      <ul>
+        <li>Pot for cooking beans</li>
+        <li>Bowl for soaking</li>
+        <li>Blender or sturdy hand blender</li>
+        <li>Fine strainer, nut-milk bag, or clean cloth</li>
+        <li>Heat-safe container or shallow dish for setting the Gofu</li>
+      </ul>
+
+      <h3>Steps</h3>
+      <ol>
+        <li>
+          <strong>Soak the beans.</strong><br />
+          Rinse 1 cup of dry beans. Soak in plenty of water for several hours
+          or overnight, until the beans are plump. Drain and rinse.
+        </li>
+        <li>
+          <strong>Cook until very soft.</strong><br />
+          Cover the soaked beans with fresh water and cook until they are soft
+          enough to easily mash between your fingers. This may take 45–90 minutes
+          depending on the bean. Lightly salt toward the end of cooking.
+        </li>
+        <li>
+          <strong>Blend with fresh water.</strong><br />
+          Drain the cooked beans (saving a little cooking liquid if you like).
+          Blend the beans with enough fresh water to make a smooth, pourable
+          mixture — thicker than plant milk, thinner than hummus. Aim for a
+          texture like heavy cream or thin batter.
+        </li>
+        <li>
+          <strong>Heat the bean cream.</strong><br />
+          Pour the blended mixture into a pot. Gently heat on medium-low, stirring
+          often to prevent sticking or scorching. You want it hot and gently
+          simmering, not rapidly boiling.
+        </li>
+        <li>
+          <strong>Encourage it to set.</strong><br />
+          This is where experimentation lives. You can:
+          <ul>
+            <li>continue cooking and stirring until it thickens on its own, then</li>
+            <li>or add a small splash of lemon juice or vinegar, stirring gently,</li>
+            <li>or pour into a container and let it cool and firm in the fridge.</li>
+          </ul>
+          Different beans will thicken in different ways.
+        </li>
+        <li>
+          <strong>Cool and shape.</strong><br />
+          Pour the thickened mixture into a lightly oiled or lined container.
+          Let it cool, then refrigerate until firm enough to slice or crumble.
+        </li>
+      </ol>
+
+      <p>
+        You now have a basic Gofu: soft, sliceable, and ready to season, marinate,
+        fry, crumble into salads, or fold into stews.
+      </p>
+    </section>
+
+    <section>
+      <h2>Adjustments &amp; variations</h2>
+      <div class="section-card">
+        <h3>Texture</h3>
+        <ul>
+          <li><strong>Softer Gofu:</strong> add more water when blending.</li>
+          <li><strong>Firmer Gofu:</strong> use less water, cook longer, and chill thoroughly.</li>
+          <li><strong>Creamy spread:</strong> stop before it fully sets and use as a warm dip or chilled spread.</li>
+        </ul>
+
+        <h3>Flavor</h3>
+        <ul>
+          <li>Add garlic, herbs, or spices during the final heating step.</li>
+          <li>Marinate cooled slices in oil, vinegar, and herbs.</li>
+          <li>Crumble and sauté with onions and spices for a “scramble.”</li>
+        </ul>
+
+        <h3>Beans</h3>
+        <ul>
+          <li>Try different beans separately and note how they behave.</li>
+          <li>Record which beans give the best texture for your climate and kitchen.</li>
+          <li>Share your findings with others so the commons can grow.</li>
+        </ul>
+
+        <p class="note">
+          There is no single “correct” Gofu. The goal is a family of related foods
+          that honor local beans, local water, and local tastes.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Safety &amp; storage</h2>
+      <p>
+        Gofu is a fresh food. Treat it like cooked beans or homemade tofu:
+      </p>
+      <ul>
+        <li>Refrigerate promptly after it cools.</li>
+        <li>Use clean utensils when handling.</li>
+        <li>Enjoy within 3–4 days for best quality.</li>
+        <li>If it smells off or looks questionable, don’t eat it.</li>
+      </ul>
+
+      <p class="note">
+        This page is a starting pattern, not medical or nutritional advice.
+        Always adapt to your own health needs and local food safety guidance.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
