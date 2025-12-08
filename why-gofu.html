@@ -1,118 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Why Gofu?</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Why Gofu? | Gofu Commons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
+    :root {
+      --bg: #050505;
+      --bg-alt: #111111;
+      --text: #f5f5f5;
+      --muted: #c0c0c0;
+      --accent: #ffffff;
+      --accent-soft: #dddddd;
+      --accent-border: #333333;
+      --max-width: 800px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem 3rem;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
       line-height: 1.6;
-      background: #fdfbf7;
-      color: #222;
     }
-    header {
-      border-bottom: 2px solid #e0d6c5;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.75rem;
-    }
-    h1 {
-      margin: 0 0 0.25rem;
-      font-size: 2rem;
-      letter-spacing: 0.04em;
-    }
-    h2 {
-      margin-top: 2rem;
-      font-size: 1.35rem;
-    }
-    .quote {
-      margin-left: 1rem;
-      font-style: italic;
-      color: #555;
-    }
+
     a {
-      color: #0645ad;
+      color: var(--accent);
+      text-decoration: none;
     }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.8rem;
-      color: #666;
-      border-top: 1px solid #e0d6c5;
-      padding-top: 1rem;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom, #000000, #050505);
+      border-bottom: 1px solid var(--accent-border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: var(--accent-soft);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      padding-bottom: 0.1rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a.active {
+      border-bottom-color: var(--accent-soft);
+    }
+
+    /* Page layout */
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem 1rem;
+    }
+
+    h1, h2 {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 1.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      font-size: 0.98rem;
+    }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.3rem;
+      font-size: 0.96rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .section-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--accent-border);
+      border-radius: 0.75rem;
+      padding: 1.1rem 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 1.2rem;
+      border-top: 1px solid var(--accent-border);
+      padding-top: 0.75rem;
+    }
+
+    .highlight {
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-top: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Why Gofu?</h1>
-    <p>A little food. A bigger intention.</p>
+  <!-- Top navigation -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Gofu Commons</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="why-gofu.html" class="active">Why Gofu?</a>
+        <a href="make-gofu.html">Make Gofu</a>
+        <a href="license.html">License</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- Page content -->
   <main>
+    <h1>Why Gofu?</h1>
+    <p class="subtitle">A little food. A bigger intention.</p>
+
     <section>
       <h2>From our kitchen — a short origin</h2>
-      <p>
-        Gofu began when I wanted to make a healthier version of my mom’s beloved chicken salad. I thought of tofu — but I hesitated, aware of how much of the global tofu supply depends on soybeans.
-      </p>
-      <p class="quote">
-        “What if we swap out that bean for a different one — something gentler, more flexible, more local — and turn beans + water into fresh, nourishing protein?”
-      </p>
-      <p>
-        I started mixing other beans, water, simple tools we already had in the kitchen. Little experiments. Small meals. And eventually — Gofu was born. A humble bean-based food, but one rooted in the warmth of a family kitchen and a wish for something that felt right in body and place.
-      </p>
+      <div class="section-card">
+        <p>
+          My mom loves chicken salad. I wanted to make a healthier version for her,
+          so I thought of tofu as a substitute. Then I paused, remembering how
+          much of the global tofu supply depends on soybeans and on large
+          industrial systems I didn’t fully trust.
+        </p>
+
+        <p>
+          I wondered:
+          <span class="highlight">
+            “What if we swap out that bean for a different one — something gentler,
+            more flexible, more local — and still turn beans + water into fresh,
+            nourishing protein?”
+          </span>
+        </p>
+
+        <p>
+          So I started experimenting with other beans: water, heat, salt, and
+          simple tools already in the kitchen. Little tests. Small meals. Some
+          failures, some surprises — and slowly, Gofu appeared:
+        </p>
+
+        <p>
+          a humble bean–based food, rooted in the warmth of a family kitchen and
+          in the wish for something that felt right in both body and place.
+        </p>
+      </div>
     </section>
 
     <section>
       <h2>The broader context: why another bean — not soy</h2>
       <p>
-        Globally, soybean farming — especially for commodity crops, animal feed, processed foods — has significant environmental and social impacts. Evidence shows that millions of hectares of forests and native ecosystems have been cleared to make way for soy cultivation. :contentReference[oaicite:0]{index=0}
+        Soybeans themselves are not the “villain” — they’re an important crop in
+        many cultures. The concern is more about how soy is grown and used at
+        industrial scale: huge monocultures, long-distance shipping, and heavy
+        dependence on chemical inputs.
       </p>
+
       <p>
-        For example, between 2001 and 2015, about <strong>8.2 million hectares</strong> of land were replaced by soy cultivation — and over <strong>97%</strong> of that occurred in South America. :contentReference[oaicite:1]{index=1}  
-        Forests, savannahs, biodiverse habitats like the Amazon rainforest, the Cerrado and other native ecosystems — are threatened when land is cleared for soy, then monocropped. :contentReference[oaicite:4]{index=4}
+        In many regions, forests, savannahs, and native ecosystems have been
+        cleared to make room for soy fields. Monoculture farming often brings
+        soil degradation, erosion, fertilizer and pesticide runoff, loss of
+        biodiversity, and pressure on local communities.
       </p>
+
       <p>
-        The consequences aren’t only ecological. Soil degradation, erosion, fertilizer and pesticide runoff, loss of biodiversity, and disruption of local communities have been documented in regions dominated by industrial-scale soy farming. :contentReference[oaicite:5]{index=5}  
-        In short: a food system built on soy monocultures often carries hidden costs far beyond the soybeans in the grocery aisle.
+        When a single global crop sits at the center of animal feed, processed
+        foods, and countless consumer products, the hidden costs add up — even if
+        it looks harmless in the grocery aisle.
+      </p>
+
+      <p>
+        Gofu doesn’t exist <em>against</em> tofu or soy, but as a small experiment
+        in another direction: one that asks,
+        <span class="highlight">
+          “What happens when we shift the bean, and bring the technique closer to
+          local soils, local kitchens, and local needs?”
+          </span>
       </p>
     </section>
 
     <section>
       <h2>Gofu as a regenerative evolution of tofu-tech</h2>
       <p>
-        Gofu isn’t just a taste preference or dietary choice — it’s a small act of resistance and regeneration. By re-imagining “tofu” away from its soybean roots, we open the door to practices that:
+        Gofu is not just a taste preference or diet tweak. It’s a small act of
+        resistance and regeneration: keeping the elegant logic of tofu-tech
+        (beans + water → fresh protein), but inviting different beans, different
+        stories, and different places into the process.
       </p>
+
+      <p>In practice, that means Gofu aims to:</p>
+
       <ul>
-        <li>celebrate bean diversity — beans native or adapted to local soils and climates;</li>
-        <li>reduce reliance on large monocultures that drive deforestation and biodiversity loss;</li>
-        <li>promote food sovereignty and accessibility — by using affordable, widely available beans;</li>
-        <li>invite kitchens — home, community, school — to participate in a shared food-making tradition that can be adapted, improved, and passed on.</li>
+        <li>
+          <strong>Celebrate bean diversity</strong> — using beans that are native
+          or adapted to local soils and climates.
+        </li>
+        <li>
+          <strong>Reduce reliance on large monocultures</strong> that drive
+          deforestation and biodiversity loss.
+        </li>
+        <li>
+          <strong>Support food sovereignty and accessibility</strong> by using
+          affordable, widely available beans that communities can source for
+          themselves.
+        </li>
+        <li>
+          <strong>Invite shared practice</strong> — home kitchens, community
+          kitchens, school kitchens — to participate in a food-making tradition
+          that can be adapted, improved, and passed on.
+        </li>
       </ul>
+
       <p>
-        In a world increasingly in need of regenerative practices — practices that honor the needs of ecosystems and the beings who depend on them — Gofu is a gentle seed.  
-        A seed for reconnecting food with place, for nourishing people without starving the land.
+        In a world that urgently needs more regenerative practices — ones that
+        honor ecosystems and the people who depend on them — Gofu is meant to be
+        a gentle seed: a way to reconnect food with place, and nourishment with
+        respect for the land.
       </p>
     </section>
 
     <section>
-      <h2>Invite to adapt, share & regenerate</h2>
+      <h2>Invite to adapt, share &amp; regenerate</h2>
       <p>
-        This work is offered in the spirit of generosity and collaboration.  
-        <strong>Everyone</strong> is invited to try Gofu, adapt it to their beans and tastes, share their own variations — and contribute to a growing commons of recipes, stories, and sustainable food practice.
+        This work is offered in the spirit of generosity and collaboration.
+        Everyone is invited to try Gofu, adapt it to their beans and tastes, and
+        share their own variations. Over time, the recipe is less important than
+        the living network that grows around it: kitchens, soils, stories, and
+        care.
       </p>
+
       <p>
-        If you do try it: consider sharing what bean you used, where you live, why you made it. Over time, Gofu can grow not just as a recipe — but as a living network: of kitchens, of soils, of hope.
+        If you do try it, consider sharing:
+      </p>
+
+      <ul>
+        <li>which bean you used,</li>
+        <li>where you live,</li>
+        <li>and why you made it.</li>
+      </ul>
+
+      <p>
+        This is how Gofu can travel — not as a product to be controlled, but as a
+        commons practice that many hands can carry, repair, and reshape.
+      </p>
+
+      <p class="note">
+        All text, recipes, and materials in this repository are dedicated to the
+        public domain under CC0 1.0 Universal. Use, remix, share. Please pass the
+        generosity forward.
       </p>
     </section>
   </main>
-
-  <footer>
-    <p>
-      All text, recipes, and materials in this repository are dedicated to the public domain under CC0 1.0 Universal. Use, remix, share. Please pass the generosity forward.
-    </p>
-  </footer>
 </body>
 </html>
