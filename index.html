@@ -2,37 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Gofu Commons | Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gofu Commons</title>
+  <meta
+    name="description"
+    content="Gofu Commons is an open food commons for bean-based, tofu-style protein made from many legumes, seeds, and regional crops with simple tools."
+  />
   <style>
     :root {
-      --bg: #050505;
-      --bg-alt: #111111;
-      --text: #f5f5f5;
-      --muted: #c0c0c0;
-      --accent: #ffffff;
-      --accent-soft: #dddddd;
-      --accent-border: #333333;
-      --max-width: 800px;
+      --bg: #f6f3ea;
+      --paper: #fffdf8;
+      --ink: #2e2a24;
+      --muted: #6a6258;
+      --line: #d9d0c3;
+      --accent: #6c8b5a;
+      --accent-dark: #4f6942;
+      --warm: #efe6d6;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --maxw: 980px;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, sans-serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
     }
 
     a {
-      color: var(--accent);
+      color: var(--accent-dark);
       text-decoration: none;
     }
 
@@ -40,205 +43,302 @@
       text-decoration: underline;
     }
 
-    /* Top navigation */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: linear-gradient(to bottom, #000000, #050505);
-      border-bottom: 1px solid var(--accent-border);
+    header {
+      background: linear-gradient(to bottom, #f1eadc, #f6f3ea);
+      border-bottom: 1px solid var(--line);
     }
 
-    .nav-inner {
-      max-width: var(--max-width);
+    .wrap {
+      max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0.75rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      padding: 0 1.25rem;
     }
 
-    .brand {
-      font-weight: 600;
-      letter-spacing: 0.03em;
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      font-size: 0.85rem;
-      color: var(--accent-soft);
-      white-space: nowrap;
+      margin-bottom: 0.75rem;
     }
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-    }
-
-    .nav-links a {
-      padding-bottom: 0.1rem;
-      border-bottom: 1px solid transparent;
-    }
-
-    .nav-links a.active {
-      border-bottom-color: var(--accent-soft);
-    }
-
-    /* Page layout */
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem 1rem;
-    }
-
-    h1, h2 {
-      font-weight: 600;
-      letter-spacing: 0.02em;
+    h1, h2, h3 {
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      font-weight: normal;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
     }
 
     h2 {
-      font-size: 1.2rem;
-      margin-top: 1.9rem;
-      margin-bottom: 0.6rem;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-top: 2.5rem;
     }
 
-    p {
-      margin-bottom: 0.9rem;
+    h3 {
+      font-size: 1.2rem;
+      margin-top: 0;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      max-width: 48rem;
+      color: var(--ink);
+    }
+
+    .sublead {
+      max-width: 45rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 1rem;
+    }
+
+    nav.topnav {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    nav.topnav a {
+      display: inline-block;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      box-shadow: 0 1px 2px var(--shadow);
       font-size: 0.98rem;
     }
 
-    ul {
-      margin: 0.5rem 0 1rem 1.3rem;
-      font-size: 0.96rem;
+    main {
+      padding: 2rem 0 4rem;
     }
 
-    li {
-      margin-bottom: 0.4rem;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
-    .section-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--accent-border);
-      border-radius: 0.75rem;
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
       padding: 1.1rem 1rem;
-      margin-top: 0.8rem;
+      box-shadow: 0 4px 12px var(--shadow);
     }
 
-    .note {
-      font-size: 0.85rem;
+    .card p {
+      margin: 0.55rem 0 0;
       color: var(--muted);
-      margin-top: 1.2rem;
-      border-top: 1px solid var(--accent-border);
-      padding-top: 0.75rem;
     }
 
-    @media (max-width: 600px) {
-      main {
-        padding-top: 1.6rem;
-      }
+    .section-intro {
+      max-width: 46rem;
+      color: var(--muted);
+    }
+
+    .highlight {
+      background: var(--warm);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.2rem 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .small {
+      font-size: 0.95rem;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
-  <!-- Top navigation -->
- <header class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="brand">Gofu Commons</a>
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="why-gofu.html">Why Gofu?</a>
-      <a href="make-gofu.html">Make Gofu</a>
-      <a href="holiday.html">Holiday</a>
-      <a href="license.html">License</a>
-    </nav>
-  </div>
-</header>
-  <!-- Page content -->
-  <main>
-    <h1>Gofu Commons</h1>
-    <p class="subtitle">
-      Bean-based, plant-protein food that can be made almost anywhere with simple tools.
-    </p>
-
-    <section>
-      <h2>What is Gofu?</h2>
-      <div class="section-card">
-        <p>
-          Gofu is a gentle, adaptable food: a tofu-like base made from beans other than soy.
-          It’s designed for home kitchens, school kitchens, and community kitchens that want
-          affordable nourishment without relying on a single crop.
-        </p>
-        <p>
-          The core idea is simple: a method that anyone can learn and pass on, so that more
-          communities can turn dry beans and water into fresh, everyday protein.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <h2>A small origin story</h2>
-      <div class="section-card">
-        <p>
-          My mom loves chicken salad. I wanted to make a healthier version, so I thought of
-          tofu as a substitute. Then I remembered how much of the world’s tofu is tied to
-          large-scale soy production, and I wondered:
-        </p>
-        <p>
-          <em>
-            “What if we swap out that bean for a different one —
-            something gentler and more flexible for everyday eating?”
-          </em>
-        </p>
-        <p>
-          That question stayed with me. I started experimenting with other beans, a pot of
-          water, and whatever tools we already had at home. Somewhere between those small
-          experiments and my mom’s lunch, Gofu was born.
-        </p>
-        <p>
-          It’s a simple story, but it carries the warmth that Gofu deserves:
-          one family kitchen, one loved person, and a wish for food that is kinder to bodies
-          and to the places we call home.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Start here</h2>
-      <p>Choose the path that fits where you are:</p>
-      <ul>
-        <li>
-          <strong>Home cooks:</strong> learn the base method and variations in
-          <a href="make-gofu.html">Make Gofu</a>.
-        </li>
-        <li>
-          <strong>Community &amp; relief kitchens:</strong> read the
-          <a href="license.html">License &amp; Commons Intent</a>
-          to see how this project is meant to be shared, remixed, and protected.
-        </li>
-        <li>
-          <strong>Story &amp; philosophy:</strong> visit
-          <a href="why-gofu.html">Why Gofu?</a>
-          for the deeper “why” behind this little food.
-        </li>
-      </ul>
-
-      <p class="note">
-        All text, recipes, and materials in this repository are dedicated to the public
-        domain under CC0 1.0 Universal. You are free to copy, adapt, and share them.
-        Please pass the generosity forward.
+  <header>
+    <div class="wrap hero">
+      <div class="eyebrow">Open food commons</div>
+      <h1>Gofu Commons</h1>
+      <p class="lead">
+        A simple, adaptable, tofu-style protein made from many beans, seeds,
+        and regional crops — not just soy.
       </p>
-    </section>
+      <p class="sublead">
+        Food systems are under strain: fertilizer dependence, fragile distribution,
+        monocultures, rising costs, and ecological damage. Gofu is a small, practical
+        response — something humble that home kitchens, school kitchens, and community
+        kitchens can learn, remake, and pass on.
+      </p>
+
+      <nav class="topnav">
+        <a href="declaration.html">Declaration</a>
+        <a href="make-gofu.html">Make Gofu</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="why-gofu.html">Why Gofu?</a>
+        <a href="fermented-gofu.html">Fermented Gofu</a>
+        <a href="fermentation-ladder.html">Fermentation Ladder</a>
+        <a href="garden-stories.html">Garden Stories</a>
+        <a href="holiday.html">Holiday Offerings</a>
+        <a href="license.html">License</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section>
+        <h2>What is Gofu?</h2>
+        <p>
+          Gofu is a bean-based food inspired by tofu, but freed from reliance on a
+          single crop. It can be made from chickpeas, lentils, peas, fava beans,
+          black-eyed peas, and other regionally available legumes — and potentially
+          from seeds and future adaptations as the commons grows.
+        </p>
+        <p>
+          The core idea is simple: dry beans, water, heat, and shared technique can
+          become fresh, everyday protein almost anywhere.
+        </p>
+      </section>
+
+      <section>
+        <h2>Start here</h2>
+        <p class="section-intro">
+          A calm path into the project — whether you are a home cook, teacher, gardener,
+          fermenter, storyteller, or part of a community food effort.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3><a href="make-gofu.html">Make Gofu</a></h3>
+            <p>The basic method: a practical starting point for first batches and experiments.</p>
+          </div>
+
+          <div class="card">
+            <h3><a href="recipes.html">Recipes</a></h3>
+            <p>Variations, kitchen uses, and ways to bring Gofu into everyday meals.</p>
+          </div>
+
+          <div class="card">
+            <h3><a href="why-gofu.html">Why Gofu?</a></h3>
+            <p>The deeper context: food resilience, bean diversity, and regenerative possibility.</p>
+          </div>
+
+          <div class="card">
+            <h3><a href="fermented-gofu.html">Fermented Gofu</a></h3>
+            <p>A next step for those curious about culture, flavor, preservation, and transformation.</p>
+          </div>
+
+          <div class="card">
+            <h3><a href="fermentation-ladder.html">Fermentation Ladder</a></h3>
+            <p>A gentler progression for learning fermentation in stages, with care and confidence.</p>
+          </div>
+
+          <div class="card">
+            <h3><a href="garden-stories.html">Garden Stories</a></h3>
+            <p>Story, memory, and the human warmth around food, gardens, kitchens, and sharing.</p>
+          </div>
+
+          <div class="card">
+            <h3><a href="holiday.html">Holiday Offerings</a></h3>
+            <p>Seasonal and celebratory variations, including sweeter and more festive paths.</p>
+          </div>
+
+          <div class="card">
+            <h3><a href="declaration.html">Declaration</a></h3>
+            <p>The spirit of the commons: how this work is meant to be shared, protected, and passed on.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>A small origin story</h2>
+        <div class="highlight">
+          <p>
+            Gofu began in a family kitchen. I wanted to make a healthier version of
+            my mom’s beloved chicken salad and started wondering what would happen
+            if tofu-tech were opened up beyond soybeans.
+          </p>
+          <p>
+            That question led to small experiments: beans, water, simple tools, and
+            the hope that something nourishing, affordable, and more ecologically flexible
+            might emerge. Gofu was born from that wish — not as a product, but as a food commons.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Why this matters</h2>
+        <ul>
+          <li>It reduces dependence on a single global crop.</li>
+          <li>It welcomes local adaptation based on place, climate, and culture.</li>
+          <li>It is accessible to ordinary kitchens with simple tools.</li>
+          <li>It supports community resilience, experimentation, and shared knowledge.</li>
+          <li>It opens a path toward fermentation, preservation, and deeper food craft.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>For different kinds of stewards</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Home cooks</h3>
+            <p>Start with the base method, then branch into texture, seasoning, and everyday meals.</p>
+          </div>
+          <div class="card">
+            <h3>Teachers & students</h3>
+            <p>Use Gofu as a living bridge between science, food systems, ecology, and story.</p>
+          </div>
+          <div class="card">
+            <h3>Community kitchens</h3>
+            <p>Explore low-cost protein pathways that can be adapted to local availability.</p>
+          </div>
+          <div class="card">
+            <h3>Fermenters</h3>
+            <p>Help develop careful, generous pathways for cultured versions and shared learning.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>The spirit of the project</h2>
+        <p>
+          Gofu Commons is meant to be copied, tested, improved, translated, remixed,
+          and shared. This is not a closed recipe and not a branded food product.
+          It is a commons seed.
+        </p>
+        <p>
+          If you make it, adapt it, or teach it, please pass the generosity forward.
+        </p>
+      </section>
+    </div>
   </main>
+
+  <footer>
+    <div class="wrap">
+      <p>
+        All text, recipes, and materials in this repository are dedicated to the public
+        domain under CC0 1.0 Universal.
+      </p>
+      <p class="small">
+        Use, remix, share, teach, adapt — and help the commons grow.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
