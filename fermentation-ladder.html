@@ -2,46 +2,137 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Gofu Fermentation Ladder</title>
+<title>Fermentation Ladder | Gofu Commons</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
+
 
 <style>
 
+:root {
+  --bg: #050505;
+  --text: #f5f5f5;
+  --muted: #c0c0c0;
+  --accent: #ffd37b;
+  --rung-bg: #111111;
+  --rung-border: #2a2a2a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
 .diagram {
-max-width:700px;
-margin:auto;
-padding:40px 20px;
-text-align:center;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  text-align: center;
 }
-
-.rung {
-border:2px solid #444;
-border-radius:10px;
-padding:20px;
-margin:25px 0;
-background:#f8f8f8;
-}
-
-.arrow {
-font-size:30px;
-margin:10px 0;
-}
-
 .title {
-font-size:28px;
-margin-bottom:30px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text);
 }
+.subtitle {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+.rung {
+  border: 1px solid var(--rung-border);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin: 0;
+  background: var(--rung-bg);
+  text-align: left;
+}
+.rung strong { color: var(--accent); display: block; margin-bottom: 0.3rem; }
+.arrow {
+  font-size: 1.6rem;
+  margin: 0.6rem 0;
+  color: var(--muted);
+  display: block;
+}
+
+
+/* ── Shared site nav ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(to bottom, #000, #06060a);
+  border-bottom: 1px solid rgba(255,211,123,0.18);
+}
+.site-nav-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-brand {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #ffd37b;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { color: #fff; text-decoration: none; }
+.site-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.05rem;
+}
+.site-nav-links li { display: inline; }
+.site-nav-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+.site-nav-links a:hover { color: #ffd37b; background: rgba(255,211,123,0.07); }
+.site-nav-links a.active { color: #ffd37b; background: rgba(255,211,123,0.1); }
 
 </style>
 
 </head>
 
 <body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-brand">Gofu Commons</a>
+    <ul class="site-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="why-gofu.html">Why Gofu?</a></li>
+      <li><a href="make-gofu.html">Make Gofu</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="fermented-gofu.html" class="active">Fermented Gofu</a></li>
+      <li><a href="garden-stories.html">Stories</a></li>
+      <li><a href="holiday.html">Holiday</a></li>
+      <li><a href="declaration.html">Declaration</a></li>
+      <li><a href="license.html">License</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 <div class="diagram">
 
 <div class="title">The Gofu Fermentation Ladder</div>
+<p class="subtitle">A progression from fresh Gofu to living fermented traditions — start anywhere, go as deep as you like.</p>
 
 <div class="rung">
 <strong>Fresh Gofu</strong><br>

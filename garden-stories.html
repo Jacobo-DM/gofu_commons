@@ -4,42 +4,136 @@
 <meta charset="utf-8">
 <title>Garden Stories</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
+
 
 <style>
 
+:root {
+  --bg: #050505;
+  --text: #f5f5f5;
+  --muted: #c0c0c0;
+  --accent: #ffd37b;
+  --scene-bg: #0f0f12;
+  --scene-border: #222;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.75;
+}
 .story {
-max-width:700px;
-margin:auto;
-padding:40px 20px;
-line-height:1.6;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
 }
-
 .story h1 {
-text-align:center;
-margin-bottom:30px;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  font-size: 1.9rem;
+  font-weight: normal;
 }
-
+.story .subtitle {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-family: system-ui, sans-serif;
+  margin-bottom: 2rem;
+}
 .story p {
-margin:14px 0;
+  margin: 1rem 0;
+  font-size: 1rem;
 }
-
 .scene {
-background:#f8f8f8;
-padding:20px;
-border-radius:10px;
-margin-top:20px;
+  background: var(--scene-bg);
+  border: 1px solid var(--scene-border);
+  border-left: 3px solid var(--accent);
+  padding: 1.4rem 1.6rem;
+  border-radius: 10px;
+  margin: 1.8rem 0;
+  font-style: italic;
+  color: #ddd;
 }
+.scene p { margin: 0.75rem 0; }
+
+
+/* ── Shared site nav ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(to bottom, #000, #06060a);
+  border-bottom: 1px solid rgba(255,211,123,0.18);
+}
+.site-nav-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-brand {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #ffd37b;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.site-brand:hover { color: #fff; text-decoration: none; }
+.site-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.05rem;
+}
+.site-nav-links li { display: inline; }
+.site-nav-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+.site-nav-links a:hover { color: #ffd37b; background: rgba(255,211,123,0.07); }
+.site-nav-links a.active { color: #ffd37b; background: rgba(255,211,123,0.1); }
 
 </style>
 
 </head>
 
 <body>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="site-brand">Gofu Commons</a>
+    <ul class="site-nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="why-gofu.html">Why Gofu?</a></li>
+      <li><a href="make-gofu.html">Make Gofu</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="fermented-gofu.html">Fermented Gofu</a></li>
+      <li><a href="garden-stories.html" class="active">Stories</a></li>
+      <li><a href="holiday.html">Holiday</a></li>
+      <li><a href="declaration.html">Declaration</a></li>
+      <li><a href="license.html">License</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 <div class="story">
 
 <h1>Garden Stories</h1>
+<p class="subtitle">Where Gofu meets imagination, memory, and the people who grow things.</p>
 
 <p>
 Gofu is not only a recipe.  
